@@ -10,21 +10,15 @@
 これを使えば「配信する」～「配信終了」「非公開で保存」～「配信する」～（以下同じ）が自動で行えます。
 
 ## 動作環境
-- Google Chrome 72
+- Google Chrome 76
 - OBS Studio
 
 ## 使い方
-1. 以下をブックマークに登録
-
-```
-javascript:var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}};$jscomp.arrayIterator=function(a){return{next:$jscomp.arrayIteratorImpl(a)}};$jscomp.makeIterator=function(a){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];return b?b.call(a):$jscomp.arrayIterator(a)};
-(function(){function a(){document.getElementsByClassName("start")[0].click();setTimeout(function(){document.getElementsByClassName("primary")[0].click()},200)}function b(a){var b=c(document.getElementsByClassName("time")[0].innerHTML);console.log("time="+b);b>=a&&(clearInterval(d),f())}function f(){document.getElementsByClassName("end")[0].click();document.getElementsByClassName("dialogOk")[0].click();setTimeout(function(){document.getElementsByClassName("dialog-button")[1].click()},700);setTimeout(function(){a();
-d=setInterval(b,1E3,e)},1E3)}function c(a){var b=$jscomp.makeIterator(a.split(":"));a=b.next().value;b=b.next().value;return 60*a+ +b}var e=c(prompt("\u914d\u4fe1\u6642\u9593\u3092\u5165\u529b","29:55"));a();var d=setInterval(b,1E3,e)})();
-```
-
-2. ふわっちの[「配信する」ページ](https://whowatch.tv/publish)で起動
+1. [これ](javascript:javascript%3A(function()%7Blet%20publishTime%3DtoSecond(prompt(%22%E9%85%8D%E4%BF%A1%E6%99%82%E9%96%93%E3%82%92%E5%85%A5%E5%8A%9B%22%2C%2229%3A55%22))%3Blet%20nextPublish%3Dtrue%3BstartPublish()%3Bvar%20interval%3DsetInterval(checkTime%2C1000%2CpublishTime)%3Bfunction%20startPublish()%7Bdocument.getElementsByClassName('start')%5B0%5D.click()%3BsetTimeout(function()%7Bdocument.getElementsByClassName('primary')%5B0%5D.click()%7D%2C200)%7Dfunction%20checkTime(stopTime)%7Blet%20time%3DtoSecond(document.getElementsByClassName('time')%5B0%5D.innerHTML)%3Bconsole.log(%22time%3D%22%2Btime)%3Bif(time%3E%3DstopTime)%7BclearInterval(interval)%3BendPublish()%7D%7Dfunction%20endPublish()%7Bdocument.getElementsByClassName('end')%5B0%5D.click()%3Bdocument.getElementsByClassName('dialogOk')%5B0%5D.click()%3BsetTimeout(function()%7Bdocument.getElementsByClassName('dialog-button')%5B1%5D.click()%7D%2C700)%3Bif(nextPublish)%7BsetTimeout(function()%7BstartPublish()%3Binterval%3DsetInterval(checkTime%2C1000%2CpublishTime)%7D%2C1000)%7D%7Dfunction%20toSecond(time)%7Blet%5Bm%2Cs%5D%3Dtime.split('%3A')%3Breturn%20m*60%2B%20%2Bs%7D%7D)()%3Bvoid(0);)を右クリックなどでブックマークに登録
+1. ふわっちの[「配信する」ページ](https://whowatch.tv/publish)で「外部エンコーダーを使う」にする
+1. 登録したブックマークレットを実行
 1. 配信時間を入力して
-1. OBSで配信
+1. OBSで配信開始
 
 ## 注意事項
 1. OBSの自動再接続機能が前提で作られています。
