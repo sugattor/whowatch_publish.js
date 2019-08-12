@@ -1,4 +1,4 @@
-# WhowatchPublish
+# [WhowatchPublish](https://sugattor.github.io/whowatch_publish.js/)
 
 ふわっち自動枠取りブックマークレット
 
