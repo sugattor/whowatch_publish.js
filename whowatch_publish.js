@@ -9,7 +9,7 @@
   // 配信開始
   function startPublish(){
     document.getElementsByClassName('start')[0].click();
-    document.getElementsByClassName('dialogOk')[0].click();
+    setTimeout(function(){document.getElementsByClassName('primary')[0].click()},200);
   }
 
   // 経過時間をチェックし終わらせる
