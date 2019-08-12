@@ -17,7 +17,9 @@
 1. 以下をブックマークに登録
 
 ```
-javascript:(function(){let publishTime=toSecond(prompt("配信時間を入力","29:55"));let nextPublish=true;startPublish();var b=setInterval(checkTime,1000,publishTime);function startPublish(){document.getElementsByClassName('start')[0].click();document.getElementsByClassName('dialogOk')[0].click()}function checkTime(a){let time=toSecond(document.getElementsByClassName('time')[0].innerHTML);console.log("time="+time);if(time>=a){clearInterval(b);endPublish()}}function endPublish(){document.getElementsByClassName('end')[0].click();document.getElementsByClassName('dialogOk')[0].click();setTimeout(function(){document.getElementsByClassName('dialog-button')[1].click()},700);if(nextPublish){setTimeout(function(){startPublish();b=setInterval(checkTime,1000,publishTime)},1000)}}function toSecond(a){let[m,s]=a.split(':');return m*60+ +s}})();
+javascript:var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}};$jscomp.arrayIterator=function(a){return{next:$jscomp.arrayIteratorImpl(a)}};$jscomp.makeIterator=function(a){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];return b?b.call(a):$jscomp.arrayIterator(a)};
+(function(){function a(){document.getElementsByClassName("start")[0].click();setTimeout(function(){document.getElementsByClassName("primary")[0].click()},200)}function b(a){var b=c(document.getElementsByClassName("time")[0].innerHTML);console.log("time="+b);b>=a&&(clearInterval(d),f())}function f(){document.getElementsByClassName("end")[0].click();document.getElementsByClassName("dialogOk")[0].click();setTimeout(function(){document.getElementsByClassName("dialog-button")[1].click()},700);setTimeout(function(){a();
+d=setInterval(b,1E3,e)},1E3)}function c(a){var b=$jscomp.makeIterator(a.split(":"));a=b.next().value;b=b.next().value;return 60*a+ +b}var e=c(prompt("\u914d\u4fe1\u6642\u9593\u3092\u5165\u529b","29:55"));a();var d=setInterval(b,1E3,e)})();
 ```
 
 2. ふわっちの[「配信する」ページ](https://whowatch.tv/publish)で起動
