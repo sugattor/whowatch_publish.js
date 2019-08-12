@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>WhowatchPublish | whowatch_publish.js</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="WhowatchPublish" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ふわっち自動枠取りブックマークレット" />
+<meta property="og:description" content="ふわっち自動枠取りブックマークレット" />
+<link rel="canonical" href="https://sugattor.github.io/whowatch_publish.js/" />
+<meta property="og:url" content="https://sugattor.github.io/whowatch_publish.js/" />
+<meta property="og:site_name" content="whowatch_publish.js" />
+<script type="application/ld+json">
+{"@type":"WebSite","headline":"WhowatchPublish","url":"https://sugattor.github.io/whowatch_publish.js/","name":"whowatch_publish.js","description":"ふわっち自動枠取りブックマークレット","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/whowatch_publish.js/assets/css/style.css?v=e99f6c142b4bd59aa9d3a05ed064ef68f4f73fdb">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/whowatch_publish.js/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>whowatch_publish.js</h1>
+        <p>ふわっち自動枠取りブックマークレット</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/sugattor/whowatch_publish.js" class="button fork"><strong>View On GitHub</strong></a>
+        
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1 id="whowatchpublish">WhowatchPublish</h1>
+
+<p>ふわっち自動枠取りブックマークレット</p>
+
+<h2 id="これは何">これは何？</h2>
+<p>ふわっちで配信する際、延長チケットを使わないと30分で配信が終わります。</p>
+
+<p>このブックマークレットは、自動で次の配信を始めるためのツールです。</p>
+
+<p>これを使えば「配信する」～「配信終了」「非公開で保存」～「配信する」～（以下同じ）が自動で行えます。</p>
+
+<h2 id="動作環境">動作環境</h2>
+<ul>
+  <li>Google Chrome 76</li>
+  <li>OBS Studio</li>
+</ul>
+
+<h2 id="使い方">使い方</h2>
+<ol>
+  <li><a href="javascript:(function()%7Blet%20publishTime%3DtoSecond(prompt(%22%E9%85%8D%E4%BF%A1%E6%99%82%E9%96%93%E3%82%92%E5%85%A5%E5%8A%9B%22%2C%2229%3A55%22))%3Blet%20nextPublish%3Dtrue%3BstartPublish()%3Bvar%20interval%3DsetInterval(checkTime%2C1000%2CpublishTime)%3Bfunction%20startPublish()%7Bdocument.getElementsByClassName('start')%5B0%5D.click()%3BsetTimeout(function()%7Bdocument.getElementsByClassName('primary')%5B0%5D.click()%7D%2C200)%7Dfunction%20checkTime(stopTime)%7Blet%20time%3DtoSecond(document.getElementsByClassName('time')%5B0%5D.innerHTML)%3Bconsole.log(%22time%3D%22%2Btime)%3Bif(time%3E%3DstopTime)%7BclearInterval(interval)%3BendPublish()%7D%7Dfunction%20endPublish()%7Bdocument.getElementsByClassName('end')%5B0%5D.click()%3Bdocument.getElementsByClassName('dialogOk')%5B0%5D.click()%3BsetTimeout(function()%7Bdocument.getElementsByClassName('dialog-button')%5B1%5D.click()%7D%2C700)%3Bif(nextPublish)%7BsetTimeout(function()%7BstartPublish()%3Binterval%3DsetInterval(checkTime%2C1000%2CpublishTime)%7D%2C1000)%7D%7Dfunction%20toSecond(time)%7Blet%5Bm%2Cs%5D%3Dtime.split('%3A')%3Breturn%20m*60%2B%20%2Bs%7D%7D)()%3Bvoid(0);">こちら</a>を右クリック等でブックマークに登録</li>
+  <li>ふわっちの<a href="https://whowatch.tv/publish">「配信する」ページ</a>で「外部エンコーダーを使う」にする</li>
+  <li>登録したブックマークレットを実行</li>
+  <li>配信時間を入力して</li>
+  <li>OBSで配信開始</li>
+</ol>
+
+<h2 id="注意事項">注意事項</h2>
+<ol>
+  <li>OBSの自動再接続機能が前提で作られています。</li>
+  <li>貧弱な回線の場合は動作しないかもしれません。その時は最後の700と1000を増やすといいかもしれません。</li>
+  <li>ふわっち側の仕様変更があると動作しなくなります。</li>
+  <li>使用は <strong>自己責任</strong> でお願いします。</li>
+</ol>
+
+
+      </section>
+      <footer>
+        
+          <p>Project maintained by <a href="https://github.com/sugattor">sugattor</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
