@@ -16,7 +16,7 @@
 ## 使い方
 1. 以下をブックマークに登録
 ```
-javascript:var script=document.createElement('script');script.src='https://sugattor.github.io/whowatch_publish.js/whowatch_publish.js';document.body.appendChild(script);
+javascript:(function(){var s=document.createElement("script");s.src='https://sugattor.github.io/whowatch_publish.js/whowatch_publish.js';document.body.appendChild(s)})()
 ```
 2. ふわっちの[「配信する」ページ](https://whowatch.tv/publish)で「外部エンコーダーを使う」にする
 1. 登録したブックマークレットを実行
