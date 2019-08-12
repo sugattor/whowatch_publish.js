@@ -14,7 +14,7 @@
 - OBS Studio
 
 ## 使い方
-1. [こちら](javascript:javascript%3Avar%20script%3Ddocument.createElement('script')%3Bscript.src%3D'https%3A%2F%2Fsugattor.github.io%2Fwhowatch_publish.js%2Fwhowatch_publish.js'%3Bdocument.body.appendChild(script)%3Bvoid(0);)をブックマークに登録
+1. 以下をブックマークに登録
 ```
 javascript:var script=document.createElement('script');script.src='https://sugattor.github.io/whowatch_publish.js/whowatch_publish.js';document.body.appendChild(script);
 ```
