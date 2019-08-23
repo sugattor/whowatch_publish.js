@@ -1,0 +1,3 @@
+* linguist-documentation
+_config.yml linguist-vendored
+whowatch_publish.js linguist-documentation=false
