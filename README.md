@@ -28,4 +28,4 @@ javascript:(function(){let s=document.createElement('script');s.src='https://sug
 1. 使用は __自己責任__ でお願いします。
 1. 「配信ガイドラインに同意する」にチェックが入っていないと動作しません。
 1. ふわっち側の仕様変更があると動作しなくなります。
-1. 動作しない場合は[@sugattor](https;//twitter.com/sugattor)までお知らせください。
+1. 動作しない場合は[@sugattor](https://twitter.com/sugattor)までお知らせください。
