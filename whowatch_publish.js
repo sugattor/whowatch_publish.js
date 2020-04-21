@@ -34,7 +34,7 @@
     // 500ms後ダイアログの「終了する」をクリック
     setTimeout(function () { document.getElementsByClassName('warn')[1].click() }, 500);
     // 1秒後「非公開で保存する」をクリック
-    setTimeout(function () { document.getElementsByClassName('dialog-button')[1].click() }, 1000);
+    setTimeout(function () { document.getElementsByClassName('basic')[1].click() }, 1000);
     // 2秒後に配信開始
     setTimeout(function () {
       startPublish();
