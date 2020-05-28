@@ -32,7 +32,7 @@
               break;
           case 2:
               let time = toSecond(document.getElementsByClassName('time')[0].textContent);
-              if (time > t) {
+              if (time >= t) {
                   for (let elem of document.getElementsByTagName('button')) {
                       if (elem.textContent === '終了する') {
                           elem.click();
@@ -60,7 +60,7 @@
               }
               break;
       }
-  }, 1000, publishTime);
+  }, 1500, publishTime);
 
   // 時間(MM:SS)→秒に変換する関数
   function toSecond(time) {
