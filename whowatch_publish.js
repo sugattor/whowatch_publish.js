@@ -18,6 +18,7 @@
                   if (elem.textContent === '配信する') {
                       elem.click();
                       status++;
+                      break;
                   }
               }
               break;
@@ -27,6 +28,7 @@
                   if (elem.textContent === '配信する') {
                       elem.click();
                       status++;
+                      break;
                   }
               }
               break;
@@ -37,6 +39,7 @@
                       if (elem.textContent === '終了する') {
                           elem.click();
                           status++;
+                          break;
                       }
                   }
               }
@@ -47,6 +50,7 @@
                   if (elem.textContent === '終了する') {
                       elem.click();
                       status++;
+                      break;
                   }
               }
               break;
@@ -56,6 +60,7 @@
                   if (elem.textContent === '非公開で保存') {
                       elem.click();
                       status = 0;
+                      break;
                   }
               }
               break;
