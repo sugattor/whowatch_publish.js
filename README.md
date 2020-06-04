@@ -1,5 +1,4 @@
-# WhowatchPublish
-
+# whowatch_publish.js
 ふわっち自動枠取りブックマークレット
 
 ## これは何？
