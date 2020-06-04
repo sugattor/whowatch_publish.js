@@ -18,15 +18,20 @@
                   if (elem.textContent === '配信する') {
                       elem.click();
                       status++;
+                      break;
                   }
               }
               break;
           case 1:
               liveStartDialogs = document.getElementsByTagName('live-start-dialog');
-              for (let elem of liveStartDialogs[0].getElementsByTagName('button')) {
-                  if (elem.textContent === '配信する') {
-                      elem.click();
-                      status++;
+              loop_status1:
+              for (let dialog of liveStartDialogs) {
+                  for (let elem of dialog.getElementsByTagName('button')) {
+                      if (elem.textContent === '配信する') {
+                          elem.click();
+                          status++;
+                          break loop_status1;
+                      }
                   }
               }
               break;
@@ -37,26 +42,35 @@
                       if (elem.textContent === '終了する') {
                           elem.click();
                           status++;
+                          break;
                       }
                   }
               }
               break;
           case 3:
-              genericDialogs = document.getElementsByTagName('generic-dialog');
-              for (let elem of genericDialogs[0].getElementsByTagName('button')) {
-                  if (elem.textContent === '終了する') {
-                      elem.click();
-                      status++;
-                  }
+            genericDialogs = document.getElementsByTagName('generic-dialog');
+            loop_status3:
+            for (let dialog of genericDialogs) {
+              for (let elem of dialog.getElementsByTagName('button')) {
+                if (elem.textContent === '終了する') {
+                  elem.click();
+                  status++;
+                  break loop_status3;
+                }
               }
-              break;
+            }
+            break;
           case 4:
               genericDialogs = document.getElementsByTagName('generic-dialog');
-              for (let elem of genericDialogs[0].getElementsByTagName('button')) {
+              loop_status4:
+              for (let dialog of genericDialogs) {
+                for (let elem of dialog.getElementsByTagName('button')) {
                   if (elem.textContent === '非公開で保存') {
-                      elem.click();
-                      status = 0;
+                    elem.click();
+                    status = 0;
+                    break loop_status4;
                   }
+                }
               }
               break;
       }
