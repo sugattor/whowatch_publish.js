@@ -39,7 +39,7 @@
         break;
 
       case 2:
-        let time = toSecond(document.getElementsByClassName('time')[0].textContent);
+        let time = toSecond(document.getElementsByClassName('time-count')[0].textContent);
         if (time >= t) {
           for (let elem of document.getElementsByTagName('button')) {
             if (elem.textContent === '終了する') {
@@ -70,7 +70,7 @@
         loop_status4:
         for (let dialog of genericDialogs) {
           for (let elem of dialog.getElementsByTagName('button')) {
-            if (elem.textContent === '非公開で保存') {
+            if (elem.textContent === '閉じる') {
               elem.click();
               status = 0;
               break loop_status4;
