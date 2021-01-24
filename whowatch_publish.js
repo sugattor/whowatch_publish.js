@@ -79,7 +79,7 @@
         }
         break;
     }
-  }, 1500, publishTime);
+  }, 2000, publishTime);
 
   // 時間(MM:SS)→秒に変換する関数
   function toSecond(time) {
