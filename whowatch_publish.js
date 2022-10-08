@@ -16,7 +16,7 @@
     switch (status) {
       case 0:
         for (let elem of document.getElementsByTagName('button')) {
-          if (elem.textContent === '配信する') {
+          if (elem.textContent.includes('配信する')) {
             elem.click();
             status++;
             break;
@@ -29,7 +29,7 @@
         loop_status1:
         for (let dialog of liveStartDialogs) {
           for (let elem of dialog.getElementsByTagName('button')) {
-            if (elem.textContent === '配信する') {
+            if (elem.textContent.includes('配信する')) {
               elem.click();
               status++;
               break loop_status1;
@@ -42,7 +42,7 @@
         let time = toSecond(document.getElementsByClassName('time-count')[0].textContent);
         if (time >= t) {
           for (let elem of document.getElementsByTagName('button')) {
-            if (elem.textContent === '終了する') {
+            if (elem.textContent.includes('終了する')) {
               elem.click();
               status++;
               break;
@@ -56,7 +56,7 @@
         loop_status3:
         for (let dialog of genericDialogs) {
           for (let elem of dialog.getElementsByTagName('button')) {
-            if (elem.textContent === '終了する') {
+            if (elem.textContent.includes('終了する')) {
               elem.click();
               status++;
               break loop_status3;
@@ -70,7 +70,7 @@
         loop_status4:
         for (let dialog of genericDialogs) {
           for (let elem of dialog.getElementsByTagName('button')) {
-            if (elem.textContent === '閉じる') {
+            if (elem.textContent.includes('閉じる')) {
               elem.click();
               status = 0;
               break loop_status4;
